@@ -28,6 +28,7 @@ Build a world-class, premium, conversion-focused landing page for PMAISM — an 
 - No pricing anywhere. Tested 100% backend + frontend (iteration_1).
 
 ## Backlog / Next Items
+- **Done (2026-06-18 follow-up):** consistent uploaded logo in navbar+footer; removed custom cursor entirely; Outcomes section moved above Success Stories; form is Book-Demo-only with Personal/Education/Professional sections (email + 10-digit mobile + year validation, conditional Experienced fields); confirmation popup with "Our Team will contact you within 1–2 Business Days" + Demo Session Details (DEMO_SESSION in content.js); full-viewport hero; footer Book Demo button. Backend models extended; tested 100% (iteration_2).
 - **P1:** Replace placeholders — real logo, founder photo + story, WhatsApp number, email & LinkedIn URLs (in `data/content.js`).
 - **P1:** Real testimonials (structure already supports it in `STORIES`).
 - **P2:** Simple admin view to browse submitted leads (`GET /api/leads` exists).
