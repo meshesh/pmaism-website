@@ -13,7 +13,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <button onClick={() => scrollToId("hero")} className="flex items-center gap-2.5">
-              <img src={BRAND.logo} alt="PMAISM logo" className="h-10 w-10 rounded-lg object-contain" />
+              <img src={BRAND.logo} alt="PMAISM logo" className="h-[3.125rem] w-[3.125rem] object-contain" />
               <span className="text-lg font-bold tracking-tight text-white">{BRAND.name}</span>
             </button>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
