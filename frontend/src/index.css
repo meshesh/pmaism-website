@@ -141,10 +141,3 @@ html.lenis body {
         mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
     }
 }
-
-/* Hide native cursor on desktop pointer devices (custom cursor active) */
-@media (pointer: fine) {
-    .cursor-active * {
-        cursor: none !important;
-    }
-}

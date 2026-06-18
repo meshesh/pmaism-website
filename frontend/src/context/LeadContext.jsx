@@ -11,17 +11,14 @@ export const useLead = () => {
 
 export const LeadProvider = ({ children }) => {
   const [open, setOpen] = useState(false);
-  const [type, setType] = useState("demo");
 
-  const openLead = useCallback((leadType = "demo") => {
-    setType(leadType);
-    setOpen(true);
-  }, []);
+  // Single Book Demo flow; arg kept for call-site compatibility.
+  const openLead = useCallback(() => setOpen(true), []);
 
   return (
     <LeadContext.Provider value={{ openLead }}>
       {children}
-      <LeadDialog open={open} onOpenChange={setOpen} type={type} setType={setType} />
+      <LeadDialog open={open} onOpenChange={setOpen} />
     </LeadContext.Provider>
   );
 };

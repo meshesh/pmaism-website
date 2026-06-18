@@ -1,0 +1,41 @@
+{
+  "summary": "Iteration 2 testing for PMAISM follow-up changes. Backend: 8/8 pytest tests pass including new lead fields (qualification, passed_out_year, employment_status, previous_company, previous_role, years_experience) with both Fresher and Experienced demo payloads, GET /api/leads returns new fields, invalid email returns 422. Frontend: Verified consistent logo in navbar+footer, no custom cursor / no cursor-active class, Outcomes section DOM order above Success Stories, nav-link-outcomes scrolls to outcomes, hero-cta-demo opens lead-dialog with 3 sections (Personal/Education/Professional) and NO Apply toggle inside form, phone strips non-digits and caps at 10, invalid email + <10-digit phone blocked, Experienced reveals lead-prev-company/role/years-exp, Fresher hides them, valid Fresher submit shows lead-confirmation with 'Our Team will contact you within 1-2 Business Days' and Demo Session Details (Date/Time/Mode/Zoom Link 'We will message you the Zoom link before the session.'), footer-cta-demo opens lead-dialog.",
+  "backend_issues": {
+    "critical": [],
+    "minor": [
+      {"endpoint": "POST /api/leads", "issue": "Returns 200 OK on create; FastAPI convention prefers 201 Created (carried over from iter 1)"},
+      {"endpoint": "POST /api/leads", "issue": "No server-side enforcement of 10-digit phone or qualification/passed_out_year/employment_status presence for lead_type='demo'; relies entirely on frontend validation. Public endpoint is also unrate-limited."}
+    ]
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [
+    "/app/backend/tests/backend_test.py",
+    "/app/test_reports/pytest/pytest_results.xml"
+  ],
+  "action_items": [
+    "(Optional, low priority) Use 201 for POST /api/leads",
+    "(Optional) Add server-side conditional validation: when lead_type='demo', require qualification, passed_out_year, employment_status; when employment_status='experienced', require previous_company/role/years_experience; enforce 10-digit phone via regex",
+    "Replace placeholder DEMO_SESSION.zoomLink and BRAND.whatsappLink before launch"
+  ],
+  "critical_code_review_comments": [
+    "LeadCreate model accepts arbitrary phone string — frontend regex /^\\d{10}$/ enforces it, but API caller bypassing UI can submit any phone. Consider Pydantic constr(pattern=r'^\\d{10}$').",
+    "lead_type Literal allows 'apply' though UI now always sends 'demo' — keep for backward compat but document.",
+    "QUALIFICATIONS list is frontend-only; backend accepts any string for qualification — no enum validation server-side.",
+    "Hero still has hero-cta-apply (Apply Now) calling openLead('apply'); per problem statement the form is Book Demo only and Apply buttons intentionally open the same demo form (LeadDialog ignores the type and always submits lead_type='demo'). This is correct per spec but the 'apply' param passed to openLead is unused inside LeadDialog — minor dead code.",
+    "server.py: logger still defined below routes (line ~33 looks fine actually, was earlier flagged but logger is at top now). Verified OK."
+  ],
+  "updated_files": [
+    "/app/backend/tests/backend_test.py (added test_create_demo_lead_with_new_fields_and_persist + test_create_fresher_demo_lead)"
+  ],
+  "success_rate": {"backend": "100% (8/8)", "frontend": "100%"},
+  "test_credentials": "N/A — no auth",
+  "seed_data_creation": "Created leads via POST /api/leads: TEST_Demo_User_V2 (experienced), TEST_Fresher_User (fresher), plus TEST_Apply_User and TEST_FE_User from form submission, all prefixed TEST_.",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Lead form is single-flow Book Demo (no toggle). Data-testids: nav-logo, nav-link-outcomes, hero-cta-demo, footer-cta-demo, lead-dialog, lead-name, lead-email, lead-phone, lead-qualification (Radix Select - open trigger then click role=option), lead-passout-year, lead-status-fresher, lead-status-experienced, lead-prev-company, lead-prev-role, lead-years-exp, lead-submit, lead-confirmation, lead-confirmation-close. DOM order: Founder -> Placement(id=outcomes) -> SuccessStories(id=stories). DEMO_SESSION.zoomLink empty => 'We will message you the Zoom link before the session.'. Backend pytest at /app/backend/tests/backend_test.py (8 tests).",
+  "rca of the issue": "N/A — no bugs found. Initial test-script assertion failure was due to icon prefixed whitespace in section labels (' Personal Details' vs 'Personal Details'); fixed by .trim() in the JS evaluation. No application code change required."
+}

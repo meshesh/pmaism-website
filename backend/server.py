@@ -25,6 +25,13 @@ app = FastAPI(title="PMAISM API")
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
 
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
 
 # ---------------- Models ----------------
 class StatusCheck(BaseModel):
@@ -42,10 +49,13 @@ class LeadCreate(BaseModel):
     name: str
     email: EmailStr
     phone: str
-    lead_type: Literal["demo", "apply"]
-    background: Optional[str] = None
-    experience: Optional[str] = None
-    preferred_time: Optional[str] = None
+    lead_type: Literal["demo", "apply"] = "demo"
+    qualification: Optional[str] = None
+    passed_out_year: Optional[str] = None
+    employment_status: Optional[str] = None
+    previous_company: Optional[str] = None
+    previous_role: Optional[str] = None
+    years_experience: Optional[str] = None
     message: Optional[str] = None
 
 
@@ -56,9 +66,12 @@ class Lead(BaseModel):
     email: str
     phone: str
     lead_type: str
-    background: Optional[str] = None
-    experience: Optional[str] = None
-    preferred_time: Optional[str] = None
+    qualification: Optional[str] = None
+    passed_out_year: Optional[str] = None
+    employment_status: Optional[str] = None
+    previous_company: Optional[str] = None
+    previous_role: Optional[str] = None
+    years_experience: Optional[str] = None
     message: Optional[str] = None
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
@@ -133,12 +146,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
-logger = logging.getLogger(__name__)
 
 
 @app.on_event("shutdown")

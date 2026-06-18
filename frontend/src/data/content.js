@@ -3,11 +3,30 @@
 export const BRAND = {
   name: "PMAISM",
   tagline: "AI-Enhanced Project Management Career Accelerator",
+  logo: "https://customer-assets.emergentagent.com/job_exec-training-v2/artifacts/sp9c14im_final-logo_1.png",
   whatsapp: "+10000000000", // placeholder
   whatsappLink: "https://wa.me/10000000000",
   email: "hello@pmaism.com",
   linkedin: "https://www.linkedin.com/company/pmaism",
 };
+
+// Demo session details shown in the booking confirmation popup.
+// Leave zoomLink empty to show the "we will message the link" note.
+export const DEMO_SESSION = {
+  date: "Every Saturday",
+  time: "10:00 AM – 11:00 AM IST",
+  mode: "Online",
+  zoomLink: "", // placeholder — empty means link will be messaged
+};
+
+export const QUALIFICATIONS = [
+  "High School",
+  "Diploma",
+  "Bachelor's Degree",
+  "Master's Degree",
+  "PhD",
+  "Other",
+];
 
 export const NAV_LINKS = [
   { id: "program", label: "Program" },

@@ -40,7 +40,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden pt-32 pb-20 sm:pt-40 lg:pb-28"
+      className="relative flex min-h-[100svh] items-center overflow-hidden pt-28 pb-16 sm:pt-32 lg:pb-20"
       onMouseMove={handleMove}
       onMouseLeave={reset}
       ref={ref}

@@ -40,15 +40,18 @@ class TestMetrics:
 
 # ---------------- /api/leads ----------------
 class TestLeads:
-    def test_create_demo_lead_and_persist(self, session):
+    def test_create_demo_lead_with_new_fields_and_persist(self, session):
         payload = {
-            "name": "TEST_Demo_User",
-            "email": "TEST_demo@example.com",
-            "phone": "+1 555 111 2222",
+            "name": "TEST_Demo_User_V2",
+            "email": "TEST_demo_v2@example.com",
+            "phone": "9876543210",
             "lead_type": "demo",
-            "background": "QA",
-            "preferred_time": "Morning",
-            "message": "Looking forward to demo",
+            "qualification": "Bachelor's Degree",
+            "passed_out_year": "2022",
+            "employment_status": "experienced",
+            "previous_company": "Acme Inc.",
+            "previous_role": "QA Engineer",
+            "years_experience": "3",
         }
         r = session.post(f"{API}/leads", json=payload, timeout=15)
         assert r.status_code == 200, r.text
@@ -57,7 +60,42 @@ class TestLeads:
         assert data["name"] == payload["name"]
         assert data["email"] == payload["email"]
         assert data["lead_type"] == "demo"
+        assert data["qualification"] == "Bachelor's Degree"
+        assert data["passed_out_year"] == "2022"
+        assert data["employment_status"] == "experienced"
+        assert data["previous_company"] == "Acme Inc."
+        assert data["previous_role"] == "QA Engineer"
+        assert data["years_experience"] == "3"
         assert "created_at" in data and data["created_at"]
+
+        # Verify persisted via GET filter and new fields present
+        r2 = session.get(f"{API}/leads", params={"lead_type": "demo"}, timeout=15)
+        assert r2.status_code == 200
+        match = next((l for l in r2.json() if l["id"] == data["id"]), None)
+        assert match is not None
+        assert match["qualification"] == "Bachelor's Degree"
+        assert match["passed_out_year"] == "2022"
+        assert match["employment_status"] == "experienced"
+        assert match["previous_company"] == "Acme Inc."
+        assert match["previous_role"] == "QA Engineer"
+        assert match["years_experience"] == "3"
+
+    def test_create_fresher_demo_lead(self, session):
+        payload = {
+            "name": "TEST_Fresher_User",
+            "email": "TEST_fresher@example.com",
+            "phone": "9123456780",
+            "lead_type": "demo",
+            "qualification": "Bachelor's Degree",
+            "passed_out_year": "2024",
+            "employment_status": "fresher",
+        }
+        r = session.post(f"{API}/leads", json=payload, timeout=15)
+        assert r.status_code == 200, r.text
+        data = r.json()
+        assert data["employment_status"] == "fresher"
+        assert data["previous_company"] is None
+        assert data["years_experience"] is None
 
         # Verify persisted via GET filter
         r2 = session.get(f"{API}/leads", params={"lead_type": "demo"}, timeout=15)

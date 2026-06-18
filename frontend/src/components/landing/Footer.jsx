@@ -1,9 +1,11 @@
 import React from "react";
-import { Mail, Linkedin, MessageCircle } from "lucide-react";
+import { Mail, Linkedin, MessageCircle, CalendarCheck2 } from "lucide-react";
 import { NAV_LINKS, BRAND } from "@/data/content";
 import { scrollToId } from "@/hooks/useLenis";
+import { useLead } from "@/context/LeadContext";
 
 export default function Footer() {
+  const { openLead } = useLead();
   return (
     <footer className="relative border-t border-white/8 bg-ink2/60 pt-16" data-testid="footer">
       <div className="max-shell container-px">
@@ -11,9 +13,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <button onClick={() => scrollToId("hero")} className="flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand text-sm font-bold text-white">
-                PM
-              </span>
+              <img src={BRAND.logo} alt="PMAISM logo" className="h-10 w-10 rounded-lg object-contain" />
               <span className="text-lg font-bold tracking-tight text-white">{BRAND.name}</span>
             </button>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
@@ -59,6 +59,13 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
+            <button
+              onClick={() => openLead()}
+              data-testid="footer-cta-demo"
+              className="btn-glow mt-5 inline-flex items-center gap-2 rounded-xl bg-brand px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-light"
+            >
+              <CalendarCheck2 className="h-4 w-4" /> Book Free Demo
+            </button>
           </div>
         </div>
 

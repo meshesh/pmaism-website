@@ -30,8 +30,8 @@ export default function Landing() {
         <Method />
         <WhyDifferent />
         <Founder />
-        <SuccessStories />
         <Placement />
+        <SuccessStories />
         <DemoBooking />
         <FAQSection />
         <Blog />

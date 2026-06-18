@@ -2,7 +2,6 @@ import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "@/components/ui/sonner";
 import { LeadProvider } from "@/context/LeadContext";
-import CustomCursor from "@/components/CustomCursor";
 import useLenis from "@/hooks/useLenis";
 import Landing from "@/pages/Landing";
 
@@ -11,7 +10,6 @@ function App() {
 
   return (
     <div className="App">
-      <CustomCursor />
       <LeadProvider>
         <BrowserRouter>
           <Routes>

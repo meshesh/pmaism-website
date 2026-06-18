@@ -4,7 +4,6 @@ import { Menu, X, CalendarCheck2 } from "lucide-react";
 import { NAV_LINKS, BRAND } from "@/data/content";
 import { scrollToId } from "@/hooks/useLenis";
 import { useLead } from "@/context/LeadContext";
-
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("");
@@ -59,9 +58,7 @@ export default function Navbar() {
           className="flex items-center gap-2.5"
           data-testid="nav-logo"
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand text-sm font-bold text-white btn-glow">
-            PM
-          </span>
+          <img src={BRAND.logo} alt="PMAISM logo" className="h-10 w-10 rounded-lg object-contain" />
           <span className="text-lg font-bold tracking-tight text-white">{BRAND.name}</span>
         </button>
 
