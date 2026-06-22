@@ -9,7 +9,7 @@ const icons = [GraduationCap, Repeat, TrendingUp];
 
 export default function WhoThisIsFor() {
   return (
-    <section className="relative py-24 sm:py-32" data-testid="who-for">
+    <section className="relative py-16 sm:py-24" data-testid="who-for">
       <div className="max-shell container-px">
         <SectionHeading
           eyebrow="Who This Is For"

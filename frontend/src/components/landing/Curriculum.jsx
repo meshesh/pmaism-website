@@ -8,7 +8,7 @@ import { CURRICULUM } from "@/data/content";
 
 export default function Curriculum() {
   return (
-    <section id="curriculum" className="relative py-24 sm:py-32" data-testid="curriculum">
+    <section id="curriculum" className="relative py-16 sm:py-24" data-testid="curriculum">
       <div className="absolute inset-0 grid-texture opacity-30" />
       <div className="max-shell container-px relative">
         <SectionHeading

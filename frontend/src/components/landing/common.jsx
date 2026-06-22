@@ -26,6 +26,14 @@ export const SectionHeading = ({ eyebrow, title, subtitle, align = "center", cla
   </div>
 );
 
+// Subtle glow divider between major sections — low opacity, soft blend.
+export const SectionDivider = () => (
+  <div className="relative h-px w-full" aria-hidden="true">
+    <div className="mx-auto h-px max-w-5xl bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+    <div className="pointer-events-none absolute left-1/2 top-0 h-px w-1/3 -translate-x-1/2 bg-gradient-to-r from-transparent via-brand/40 to-transparent blur-[2px]" />
+  </div>
+);
+
 // Magnetic CTA button that subtly attracts toward the cursor.
 export const MagneticButton = ({
   children,

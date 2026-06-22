@@ -7,7 +7,7 @@ import { PLACEMENT } from "@/data/content";
 
 export default function Placement() {
   return (
-    <section id="outcomes" className="relative py-24 sm:py-32" data-testid="placement">
+    <section id="outcomes" className="relative py-16 sm:py-24" data-testid="placement">
       <div className="absolute inset-0 grid-texture opacity-30" />
       <div className="max-shell container-px relative">
         <SectionHeading

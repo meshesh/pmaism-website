@@ -11,7 +11,7 @@ import { FAQS } from "@/data/content";
 
 export default function FAQSection() {
   return (
-    <section id="faq" className="relative py-24 sm:py-32" data-testid="faq">
+    <section id="faq" className="relative py-16 sm:py-24" data-testid="faq">
       <div className="max-shell container-px">
         <SectionHeading
           eyebrow="FAQ"

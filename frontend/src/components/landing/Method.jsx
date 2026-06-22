@@ -12,12 +12,12 @@ export default function Method() {
   const fill = useSpring(scrollYProgress, { stiffness: 90, damping: 30 });
 
   return (
-    <section className="relative py-24 sm:py-32" data-testid="method">
+    <section className="relative py-16 sm:py-24" data-testid="method">
       <div className="max-shell container-px">
         <SectionHeading
           eyebrow="The Process"
           title="The PMAISM Method"
-          subtitle="A deliberate six-phase progression that moves you from fundamentals to a confident career transition."
+          subtitle="A deliberate, phase-by-phase progression that moves you from fundamentals to a confident, placement-ready career transition."
         />
 
         <div ref={ref} className="relative mx-auto mt-16 max-w-3xl">

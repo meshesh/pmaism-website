@@ -7,17 +7,11 @@ import { PAIN, OUTCOME } from "@/data/content";
 
 export default function PainVsOutcome() {
   return (
-    <section id="program" className="relative py-24 sm:py-32" data-testid="pain-outcome">
+    <section id="program" className="relative py-16 sm:py-24" data-testid="pain-outcome">
       <div className="max-shell container-px">
         <SectionHeading
-          eyebrow="The Difference"
-          title={
-            <>
-              Most PM Courses Teach Theory.
-              <br />
-              <span className="text-brandgrad">Real Careers Need Execution.</span>
-            </>
-          }
+          eyebrow="Theory vs Execution"
+          title="The Difference"
           subtitle="One path hands you certificates. The other hands you the workflows, judgement and proof you need to get hired and thrive."
         />
 

@@ -7,7 +7,7 @@ import { BLOG } from "@/data/content";
 
 export default function Blog() {
   return (
-    <section className="relative border-t border-white/5 bg-ink2/40 py-24 sm:py-32" data-testid="blog">
+    <section className="relative border-t border-white/5 bg-ink2/40 py-16 sm:py-24" data-testid="blog">
       <div className="max-shell container-px">
         <SectionHeading
           eyebrow="Insights"

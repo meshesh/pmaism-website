@@ -10,12 +10,12 @@ import WhyDifferent from "@/components/landing/WhyDifferent";
 import Founder from "@/components/landing/Founder";
 import SuccessStories from "@/components/landing/SuccessStories";
 import Placement from "@/components/landing/Placement";
-import DemoBooking from "@/components/landing/DemoBooking";
 import FAQSection from "@/components/landing/FAQSection";
 import Blog from "@/components/landing/Blog";
 import FinalCTA from "@/components/landing/FinalCTA";
 import Footer from "@/components/landing/Footer";
 import WhatsAppFab from "@/components/landing/WhatsAppFab";
+import { SectionDivider } from "@/components/landing/common";
 
 export default function Landing() {
   return (
@@ -25,15 +25,20 @@ export default function Landing() {
         <Hero />
         <SocialProof />
         <PainVsOutcome />
+        <SectionDivider />
         <WhoThisIsFor />
+        <SectionDivider />
         <Curriculum />
+        <SectionDivider />
         <Method />
         <WhyDifferent />
         <Founder />
+        <SectionDivider />
         <Placement />
+        <SectionDivider />
         <SuccessStories />
-        <DemoBooking />
         <FAQSection />
+        <SectionDivider />
         <Blog />
         <FinalCTA />
       </main>

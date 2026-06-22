@@ -7,7 +7,7 @@ import { WHY_FEATURES } from "@/data/content";
 
 export default function WhyDifferent() {
   return (
-    <section className="relative border-y border-white/5 bg-ink2/40 py-24 sm:py-32" data-testid="why-different">
+    <section className="relative border-y border-white/5 bg-ink2/40 py-16 sm:py-24" data-testid="why-different">
       <div className="max-shell container-px">
         <SectionHeading
           eyebrow="Why PMAISM"

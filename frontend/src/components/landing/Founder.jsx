@@ -6,7 +6,7 @@ import { BRAND } from "@/data/content";
 
 export default function Founder() {
   return (
-    <section className="relative overflow-hidden py-24 sm:py-32" data-testid="founder">
+    <section className="relative overflow-hidden py-16 sm:py-24" data-testid="founder">
       <div className="pointer-events-none absolute inset-0 radial-glow" />
       <div className="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-brand/10 blur-[160px]" />
 

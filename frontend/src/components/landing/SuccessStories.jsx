@@ -27,7 +27,7 @@ export default function SuccessStories() {
   const s = STORIES[index];
 
   return (
-    <section id="stories" className="relative py-24 sm:py-32" data-testid="stories">
+    <section id="stories" className="relative py-16 sm:py-24" data-testid="stories">
       <div className="max-shell container-px">
         <SectionHeading
           eyebrow="Success Stories"
@@ -48,7 +48,7 @@ export default function SuccessStories() {
                 initial={{ opacity: 0, x: dir * 60 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: dir * -60 }}
-                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
                 drag="x"
                 dragConstraints={{ left: 0, right: 0 }}
                 dragElastic={0.2}

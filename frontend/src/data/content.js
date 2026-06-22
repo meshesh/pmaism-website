@@ -54,11 +54,11 @@ export const PAIN = [
 
 export const OUTCOME = [
   "Live mentorship",
-  "Real-world workflows",
+  "Real-Time Project Examples in JIRA",
   "AI-enhanced productivity",
   "Intensive mock interviews",
   "Career transition support",
-  "Placement assistance",
+  "Pre & Post Placement Support",
 ];
 
 export const AUDIENCES = [
@@ -97,7 +97,8 @@ export const METHOD = [
   { phase: "Phase 3", title: "Real-World Scenarios", desc: "Simulations modeled on live product and engineering teams." },
   { phase: "Phase 4", title: "AI Productivity", desc: "Modern AI systems for planning, reporting and stakeholder work." },
   { phase: "Phase 5", title: "Interview Mastery", desc: "Mock interviews, case discussions and behavioral preparation." },
-  { phase: "Phase 6", title: "Career Transition", desc: "Resume, LinkedIn, opportunity sharing and offer guidance." },
+  { phase: "Phase 6", title: "Placement Readiness", desc: "Sharpen your LinkedIn and Naukri profiles, build recruiter-ready visibility, and get matched with relevant openings." },
+  { phase: "Phase 7", title: "Course Completion Certification", desc: "Earn a verified completion certificate to showcase on LinkedIn and strengthen your professional credibility." },
 ];
 
 export const WHY_FEATURES = [
@@ -135,6 +136,7 @@ export const FAQS = [
   { q: "Is this suitable for working professionals?", a: "Yes. The program is specifically designed with morning batches to accommodate working hours, allowing you to upskill without leaving your current job." },
   { q: "Are sessions live?", a: "100%. We believe in live mentorship over pre-recorded videos. All sessions are live, interactive, and highly practical." },
   { q: "Is interview preparation included?", a: "Yes. We conduct rigorous mock interviews, resume reviews, and portfolio building sessions to ensure you are completely job-ready." },
+  { q: "Will I receive training on industry-standard PM tools?", a: "We provide hands-on training on widely used project management tools including JIRA, Microsoft Project, and Azure DevOps, ensuring you gain practical experience with tools commonly used in real-world PM environments." },
   { q: "Is this online?", a: "Yes. The entire program is delivered online through interactive Zoom sessions, allowing you to join from anywhere." },
   { q: "Is placement support available?", a: "We provide comprehensive placement assistance including resume building, LinkedIn optimization, interview prep, and sharing relevant opportunities." },
   { q: "What makes PMAISM different?", a: "Unlike generic certification mills, we focus on real-world execution. You learn the actual workflows, AI tools, and stakeholder management skills required to survive and thrive on the job." },
