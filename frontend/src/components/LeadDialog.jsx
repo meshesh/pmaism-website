@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Send,
@@ -32,9 +31,6 @@ import {
 } from "@/components/ui/select";
 import { toast } from "sonner";
 import { QUALIFICATIONS, DEMO_SESSION } from "@/data/content";
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
 
 const empty = {
   name: "",
@@ -89,15 +85,19 @@ export default function LeadDialog({ open, onOpenChange }) {
       return;
     }
     setLoading(true);
-    try {
-      await axios.post(`${API}/leads`, { ...form, lead_type: "demo" });
+
+    // ── Backend removed ──────────────────────────────────────────────
+    // Submission is a no-op placeholder for now. The captured payload is
+    // logged below. Wire this up to Google Sheets later (e.g. an Apps
+    // Script web-app URL or the Sheets API).
+    const payload = { ...form, lead_type: "demo", submitted_at: new Date().toISOString() };
+    console.log("[PMAISM] Demo booking (not sent anywhere yet):", payload);
+
+    setTimeout(() => {
+      setLoading(false);
       setDone(true);
       toast.success("Your demo seat is reserved!");
-    } catch (e2) {
-      toast.error("Something went wrong. Please try again.");
-    } finally {
-      setLoading(false);
-    }
+    }, 600);
   };
 
   const isExp = form.employment_status === "experienced";

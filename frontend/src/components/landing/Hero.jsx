@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
 import { motion } from "framer-motion";
 import {
   Sparkles,
@@ -17,26 +16,18 @@ import { useLead } from "@/context/LeadContext";
 import { MagneticButton } from "@/components/landing/common";
 import CountUp from "@/components/CountUp";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
 const trustIcons = [Radio, Globe, Clock, Sunrise, Briefcase];
 
-const fallback = { career_transitions: 420, hiring_companies: 120 };
+// Static metrics (backend removed). Update these values directly,
+// or wire them to a data source (e.g. Google Sheets) later.
+const METRICS = { career_transitions: 420, hiring_companies: 120 };
 
 export default function Hero() {
   const { openLead } = useLead();
-  const [m, setM] = useState(fallback);
-
-  useEffect(() => {
-    axios
-      .get(`${API}/metrics`)
-      .then((r) => setM(r.data))
-      .catch(() => setM(fallback));
-  }, []);
 
   const stats = [
-    { value: m.career_transitions, suffix: "+", label: "Career Transitions" },
-    { value: m.hiring_companies, suffix: "+", label: "Hiring Companies" },
+    { value: METRICS.career_transitions, suffix: "+", label: "Career Transitions" },
+    { value: METRICS.hiring_companies, suffix: "+", label: "Hiring Companies" },
     { raw: "4–6 wk", label: "Program Duration" },
   ];
 
