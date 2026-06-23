@@ -7,18 +7,30 @@ import { useLead } from "@/context/LeadContext";
 export default function Footer() {
   const { openLead } = useLead();
   return (
-    <footer className="relative border-t border-white/8 bg-ink2/60 pt-16" data-testid="footer">
+    <footer
+      className="relative border-t border-white/8 bg-ink2/60 pt-16"
+      data-testid="footer"
+    >
       <div className="max-shell container-px">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr]">
           {/* Brand */}
           <div>
-            <button onClick={() => scrollToId("hero")} className="flex items-center gap-2.5">
-              <img src={BRAND.logo} alt="PMAISM logo" className="h-[3.125rem] w-[3.125rem] object-contain" />
-              <span className="text-lg font-bold tracking-tight text-white">{BRAND.name}</span>
+            <button
+              onClick={() => scrollToId("hero")}
+              className="flex items-center gap-2.5"
+            >
+              <img
+                src={BRAND.logo}
+                alt="PMAISM logo"
+                className="h-[5rem] w-[5rem] object-contain"
+              />
+              <span className="text-lg font-bold tracking-tight text-white">
+                {BRAND.name}
+              </span>
             </button>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              {BRAND.tagline}. Learn how real Project Managers work, through live mentorship and
-              real-world execution.
+              {BRAND.tagline}. Learn how real Project Managers work, through
+              live mentorship and real-world execution.
             </p>
           </div>
 
@@ -44,18 +56,35 @@ export default function Footer() {
             <p className="text-sm font-semibold text-white">Contact</p>
             <ul className="mt-4 space-y-3">
               <li>
-                <a href={`mailto:${BRAND.email}`} className="flex items-center gap-2.5 text-sm text-muted-foreground transition-colors hover:text-white" data-testid="footer-email">
+                <a
+                  href={`mailto:${BRAND.email}`}
+                  className="flex items-center gap-2.5 text-sm text-muted-foreground transition-colors hover:text-white"
+                  data-testid="footer-email"
+                >
                   <Mail className="h-4 w-4 text-brand-light" /> {BRAND.email}
                 </a>
               </li>
               <li>
-                <a href={BRAND.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 text-sm text-muted-foreground transition-colors hover:text-white" data-testid="footer-linkedin">
+                <a
+                  href={BRAND.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2.5 text-sm text-muted-foreground transition-colors hover:text-white"
+                  data-testid="footer-linkedin"
+                >
                   <Linkedin className="h-4 w-4 text-brand-light" /> LinkedIn
                 </a>
               </li>
               <li>
-                <a href={BRAND.whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 text-sm text-muted-foreground transition-colors hover:text-white" data-testid="footer-whatsapp">
-                  <MessageCircle className="h-4 w-4 text-success" /> WhatsApp Enquiry
+                <a
+                  href={BRAND.whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2.5 text-sm text-muted-foreground transition-colors hover:text-white"
+                  data-testid="footer-whatsapp"
+                >
+                  <MessageCircle className="h-4 w-4 text-success" /> WhatsApp
+                  Enquiry
                 </a>
               </li>
             </ul>
@@ -73,7 +102,9 @@ export default function Footer() {
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} {BRAND.name}. All rights reserved.
           </p>
-          <p className="text-sm text-muted-foreground">Live Online · 4–6 Week Program · Placement Support</p>
+          <p className="text-sm text-muted-foreground">
+            Live Online · 4–6 Week Program · Placement Support
+          </p>
         </div>
       </div>
     </footer>

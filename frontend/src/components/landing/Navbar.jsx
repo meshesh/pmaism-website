@@ -11,7 +11,11 @@ export default function Navbar() {
   const { openLead } = useLead();
 
   const { scrollYProgress } = useScroll();
-  const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30, mass: 0.3 });
+  const progress = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 30,
+    mass: 0.3,
+  });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -28,7 +32,7 @@ export default function Navbar() {
           if (entry.isIntersecting) setActive(entry.target.id);
         });
       },
-      { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+      { rootMargin: "-45% 0px -50% 0px", threshold: 0 },
     );
     ids.forEach((id) => {
       const el = document.getElementById(id);
@@ -58,8 +62,14 @@ export default function Navbar() {
           className="flex items-center gap-2.5"
           data-testid="nav-logo"
         >
-          <img src={BRAND.logo} alt="PMAISM logo" className="h-[3.125rem] w-[3.125rem] object-contain" />
-          <span className="text-lg font-bold tracking-tight text-white">{BRAND.name}</span>
+          <img
+            src={BRAND.logo}
+            alt="PMAISM logo"
+            className="h-[5rem] w-[5rem] object-contain"
+          />
+          <span className="text-lg font-bold tracking-tight text-white">
+            {BRAND.name}
+          </span>
         </button>
 
         <div className="hidden items-center gap-1 lg:flex">
@@ -97,7 +107,11 @@ export default function Navbar() {
             data-testid="nav-mobile-toggle"
             aria-label="Toggle menu"
           >
-            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {mobileOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
           </button>
         </div>
       </nav>
