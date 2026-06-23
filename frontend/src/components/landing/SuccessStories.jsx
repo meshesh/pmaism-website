@@ -27,7 +27,11 @@ export default function SuccessStories() {
   const s = STORIES[index];
 
   return (
-    <section id="stories" className="relative py-16 sm:py-24" data-testid="stories">
+    <section
+      id="stories"
+      className="relative py-16 sm:py-24"
+      data-testid="stories"
+    >
       <div className="max-shell container-px">
         <SectionHeading
           eyebrow="Success Stories"
@@ -65,10 +69,15 @@ export default function SuccessStories() {
                 </p>
                 <div className="mt-8 flex items-center gap-4">
                   <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-brand to-brand-light text-lg font-bold text-white">
-                    {s.name.split(" ").map((n) => n[0]).join("")}
+                    {s.name
+                      .split(" ")
+                      .map((n) => n[0])
+                      .join("")}
                   </div>
                   <div>
-                    <p className="text-base font-semibold text-white">{s.name}</p>
+                    <p className="text-base font-semibold text-white">
+                      {s.name}
+                    </p>
                     <div className="mt-0.5 flex items-center gap-2 text-sm text-muted-foreground">
                       <span>{s.from}</span>
                       <ArrowUpRight className="h-3.5 w-3.5 text-brand-light" />
@@ -100,7 +109,9 @@ export default function SuccessStories() {
                   }}
                   aria-label={`Go to story ${i + 1}`}
                   className={`h-2 rounded-full transition-all duration-300 ${
-                    i === index ? "w-8 bg-brand-light" : "w-2 bg-white/20 hover:bg-white/40"
+                    i === index
+                      ? "w-8 bg-brand-light"
+                      : "w-2 bg-white/20 hover:bg-white/40"
                   }`}
                 />
               ))}

@@ -20,13 +20,17 @@ const trustIcons = [Radio, Globe, Clock, Sunrise, Briefcase];
 
 // Static metrics (backend removed). Update these values directly,
 // or wire them to a data source (e.g. Google Sheets) later.
-const METRICS = { career_transitions: 420, hiring_companies: 120 };
+const METRICS = { career_transitions: 650, hiring_companies: 120 };
 
 export default function Hero() {
   const { openLead } = useLead();
 
   const stats = [
-    { value: METRICS.career_transitions, suffix: "+", label: "Career Transitions" },
+    {
+      value: METRICS.career_transitions,
+      suffix: "+",
+      label: "Career Transitions",
+    },
     { value: METRICS.hiring_companies, suffix: "+", label: "Hiring Companies" },
     { raw: "4–6 wk", label: "Program Duration" },
   ];
@@ -51,16 +55,22 @@ export default function Hero() {
               transition={{ duration: 0.6 }}
               className="eyebrow"
             >
-              <Sparkles className="h-3.5 w-3.5" /> AI-Enhanced PM Career Accelerator
+              <Sparkles className="h-3.5 w-3.5" /> AI-Enhanced PM Career
+              Accelerator
             </motion.span>
 
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+              transition={{
+                duration: 0.8,
+                delay: 0.08,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               className="mt-5 text-3xl font-bold leading-[1.12] tracking-tight text-white sm:text-[2.5rem] lg:text-[2.9rem]"
             >
-              Become a <span className="text-brandgrad">Job-Ready</span> Project Manager &amp; Scrum Master in 4–6 Weeks
+              Become a <span className="text-brandgrad">Job-Ready</span> Project
+              Manager &amp; Scrum Master in 4–6 Weeks
             </motion.h1>
 
             <motion.p
@@ -69,9 +79,9 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.16 }}
               className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg"
             >
-              Master Agile execution, stakeholder management, sprint planning, AI-powered
-              workflows, and interview preparation through live mentorship and real-world
-              simulations.
+              Master Agile execution, stakeholder management, sprint planning,
+              AI-powered workflows, and interview preparation through live
+              mentorship and real-world simulations.
             </motion.p>
 
             {/* Metrics row (3 inline stats) */}
@@ -86,12 +96,19 @@ export default function Hero() {
                 <div key={s.label}>
                   <div className="text-3xl font-bold text-white sm:text-4xl">
                     {s.raw ? (
-                      <span>4–6 <span className="text-xl text-brand-light sm:text-2xl">wk</span></span>
+                      <span>
+                        4–6{" "}
+                        <span className="text-xl text-brand-light sm:text-2xl">
+                          wk
+                        </span>
+                      </span>
                     ) : (
                       <CountUp to={s.value} suffix={s.suffix} />
                     )}
                   </div>
-                  <p className="mt-1 text-sm text-muted-foreground">{s.label}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {s.label}
+                  </p>
                 </div>
               ))}
             </motion.div>
@@ -117,20 +134,28 @@ export default function Hero() {
                 Experience The PMAISM Difference
               </h2>
               <p className="mt-3 text-base text-muted-foreground">
-                Sit in on a live session, meet a mentor, and see exactly how real Project
-                Managers work — before you commit.
+                Sit in on a live session, meet a mentor, and see exactly how
+                real Project Managers work — before you commit.
               </p>
 
               <div className="mt-6 grid grid-cols-3 gap-3">
                 {[
-                  { icon: Calendar, label: "Next Batch", value: "Starting Soon" },
+                  {
+                    icon: Calendar,
+                    label: "Next Batch",
+                    value: "Starting Soon",
+                  },
                   { icon: Clock, label: "Timing", value: "Mornings" },
                   { icon: Video, label: "Platform", value: "Live on Zoom" },
                 ].map((d) => (
                   <div key={d.label} className="glass rounded-xl p-3">
                     <d.icon className="h-5 w-5 text-brand-light" />
-                    <p className="mt-2 text-[0.7rem] uppercase tracking-wider text-muted-foreground">{d.label}</p>
-                    <p className="mt-0.5 text-sm font-semibold text-white">{d.value}</p>
+                    <p className="mt-2 text-[0.7rem] uppercase tracking-wider text-muted-foreground">
+                      {d.label}
+                    </p>
+                    <p className="mt-0.5 text-sm font-semibold text-white">
+                      {d.value}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -156,7 +181,10 @@ export default function Hero() {
           {TRUST_INDICATORS.map((t, i) => {
             const Icon = trustIcons[i % trustIcons.length];
             return (
-              <div key={t} className="flex items-center gap-2 text-sm text-muted-foreground">
+              <div
+                key={t}
+                className="flex items-center gap-2 text-sm text-muted-foreground"
+              >
                 <Icon className="h-4 w-4 text-brand-light" />
                 {t}
               </div>
