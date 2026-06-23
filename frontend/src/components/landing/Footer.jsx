@@ -22,7 +22,7 @@ export default function Footer() {
               <img
                 src={BRAND.logo}
                 alt="PMAISM logo"
-                className="h-[5rem] w-[5rem] object-contain"
+                className="h-[9rem] w-[9rem] object-contain"
               />
               <span className="text-lg font-bold tracking-tight text-white">
                 {BRAND.name}
