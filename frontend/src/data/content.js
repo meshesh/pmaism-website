@@ -3,8 +3,8 @@
 export const BRAND = {
   name: "PMAISM",
   tagline: "AI-Enhanced Project Management Career Accelerator",
-  logo: "frontend\\public\\img\\logo nobg.png",
-  whatsapp: "+918309813723", // placeholder
+  logo: "/img/logo nobg.png"
+  whatsapp: "+918309813723",
   whatsappLink: "https://wa.me/918309813723",
   email: "hello@pmaism.com",
   linkedin: "https://www.linkedin.com/company/pmaism",
