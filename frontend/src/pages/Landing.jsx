@@ -16,10 +16,32 @@ import FinalCTA from "@/components/landing/FinalCTA";
 import Footer from "@/components/landing/Footer";
 import WhatsAppFab from "@/components/landing/WhatsAppFab";
 import { SectionDivider } from "@/components/landing/common";
+import SEO from "@/components/SEO/SEO";
+import {
+  landingSEO,
+  getOrganizationSchema,
+  getCourseSchema,
+  getFAQSchema,
+  getWebSiteSchema,
+  getBreadcrumbSchema,
+  getSpeakableSchema,
+} from "@/data/seo";
+import { FAQS } from "@/data/content";
 
 export default function Landing() {
   return (
     <div className="relative min-h-screen bg-ink text-white">
+      <SEO
+        {...landingSEO}
+        schema={[
+          getOrganizationSchema(),
+          getCourseSchema(),
+          getFAQSchema(FAQS),
+          getWebSiteSchema(),
+          getBreadcrumbSchema(),
+          getSpeakableSchema(),
+        ]}
+      />
       <Navbar />
       <main>
         <Hero />

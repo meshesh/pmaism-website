@@ -8,7 +8,23 @@ export const BRAND = {
   whatsappLink: "https://wa.me/918309813723",
   email: "hello@pmaism.com",
   linkedin: "https://www.linkedin.com/company/pmaism",
+  address:
+    "Ground Floor, AddIT Solutions, MC Design House, Rohini Layout Rd, HITEC City, Hyderabad 500081",
+  city: "Hyderabad",
+  state: "Telangana",
+  country: "India",
 };
+
+export const AREAS_SERVED = [
+  { name: "HITEC City", priority: "primary" },
+  { name: "Madhapur", priority: "primary" },
+  { name: "Gachibowli", priority: "primary" },
+  { name: "Financial District", priority: "primary" },
+  { name: "Nanakramguda", priority: "primary" },
+  { name: "Kondapur", priority: "secondary" },
+  { name: "Kukatpally", priority: "secondary" },
+  { name: "KPHB", priority: "secondary" },
+];
 
 // Demo session details shown in the booking confirmation popup.
 // Leave zoomLink empty to show the "we will message the link" note.
