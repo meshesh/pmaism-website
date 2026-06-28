@@ -1,5 +1,5 @@
 import React from "react";
-import { Mail, Linkedin, MessageCircle, CalendarCheck2 } from "lucide-react";
+import { Mail, Linkedin, MessageCircle, CalendarCheck2, MapPin } from "lucide-react";
 import { NAV_LINKS, BRAND } from "@/data/content";
 import { scrollToId } from "@/hooks/useLenis";
 import { useLead } from "@/context/LeadContext";
@@ -32,6 +32,17 @@ export default function Footer() {
               {BRAND.tagline}. Learn how real Project Managers work, through
               live mentorship and real-world execution.
             </p>
+            {BRAND.address && (
+              <a
+                href="https://maps.google.com/?q=PMAISM+HITEC+City+Hyderabad"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 flex items-start gap-2.5 text-sm text-muted-foreground transition-colors hover:text-white"
+              >
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-light" />
+                <span>{BRAND.address}</span>
+              </a>
+            )}
           </div>
 
           {/* Quick links */}
@@ -103,7 +114,7 @@ export default function Footer() {
             © {new Date().getFullYear()} {BRAND.name}. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground">
-            Live Online · 4–6 Week Program · Placement Support
+            HITEC City, Hyderabad · Live Online · 4–6 Week Program · Placement Support
           </p>
         </div>
       </div>

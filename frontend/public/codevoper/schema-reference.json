@@ -1,0 +1,221 @@
+{
+  "_comment": "PMAISM Schema.org Reference — HITEC City, Hyderabad. All 7 schemas used in the SEO system.",
+  "_usage": "These schemas are injected dynamically via src/components/SEO/Schema.jsx. See src/data/seo.js for generator functions.",
+
+  "schemas": [
+    {
+      "_name": "1. EducationalOrganization (Primary Brand Schema)",
+      "_purpose": "Local business + educational org with full address, geo, areaServed",
+      "_generator": "getOrganizationSchema()",
+      "data": {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "PMAISM",
+        "description": "PMAISM is an AI-Enhanced Project Management Career Accelerator offering live mentor-led training for Project Managers and Scrum Masters in HITEC City, Hyderabad.",
+        "slogan": "Learn how real Project Managers work.",
+        "url": "https://pmaism.com",
+        "logo": "https://pmaism.com/img/logo nobg.png",
+        "telephone": "+918309813723",
+        "email": "hello@pmaism.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Ground Floor, AddIT Solutions, MC Design House, Rohini Layout Rd",
+          "addressLocality": "HITEC City",
+          "addressRegion": "Hyderabad, Telangana",
+          "postalCode": "500081",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 17.4486,
+          "longitude": 78.3908
+        },
+        "areaServed": [
+          { "@type": "Place", "name": "HITEC City, Hyderabad" },
+          { "@type": "Place", "name": "Madhapur, Hyderabad" },
+          { "@type": "Place", "name": "Gachibowli, Hyderabad" },
+          { "@type": "Place", "name": "Financial District, Hyderabad" },
+          { "@type": "Place", "name": "Nanakramguda, Hyderabad" },
+          { "@type": "Place", "name": "Kondapur, Hyderabad" },
+          { "@type": "Place", "name": "Kukatpally, Hyderabad" },
+          { "@type": "Place", "name": "KPHB, Hyderabad" }
+        ],
+        "sameAs": ["https://www.linkedin.com/company/pmaism"],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+918309813723",
+          "contactType": "customer service",
+          "areaServed": "IN",
+          "availableLanguage": ["English", "Hindi", "Telugu"]
+        }
+      }
+    },
+    {
+      "_name": "2. Course Schema",
+      "_purpose": "PM & Scrum Master accelerator program details",
+      "_generator": "getCourseSchema()",
+      "data": {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "PMAISM Project Management & Scrum Master Career Accelerator",
+        "description": "A 4-6 week live online program covering Agile & Scrum, sprint planning, stakeholder management, AI productivity, interview preparation and career transition. Located in HITEC City, Hyderabad.",
+        "provider": {
+          "@type": "Organization",
+          "name": "PMAISM",
+          "url": "https://pmaism.com"
+        },
+        "educationalLevel": "Beginner to Intermediate",
+        "timeRequired": "P6W",
+        "occupationalCategory": "Project Manager",
+        "teaches": [
+          "Agile",
+          "Scrum",
+          "JIRA",
+          "Sprint Planning",
+          "Stakeholder Management",
+          "AI Productivity",
+          "Interview Preparation"
+        ],
+        "locationCreated": {
+          "@type": "Place",
+          "name": "HITEC City, Hyderabad, Telangana"
+        },
+        "hasCourseInstance": {
+          "@type": "CourseInstance",
+          "courseMode": "Online",
+          "courseWorkload": "P6W",
+          "courseSchedule": "Morning batches, Monday to Friday"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "INR",
+          "description": "Free demo session available"
+        }
+      }
+    },
+    {
+      "_name": "3. FAQPage Schema",
+      "_purpose": "All 8 FAQs — triggers FAQ rich results in Google + AI Overview citations",
+      "_generator": "getFAQSchema(faqs)",
+      "_note": "Dynamically generated from FAQS array in src/data/content.js",
+      "data": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is this beginner friendly?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely. We start with the core fundamentals of Agile and Scrum before moving into advanced workflows and AI tools. Freshers have successfully transitioned into PM roles through this program."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this suitable for working professionals?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The program is specifically designed with morning batches to accommodate working hours, allowing you to upskill without leaving your current job."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are sessions live?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "100%. We believe in live mentorship over pre-recorded videos. All sessions are live, interactive, and highly practical."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is interview preparation included?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We conduct rigorous mock interviews, resume reviews, and portfolio building sessions to ensure you are completely job-ready."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will I receive training on industry-standard PM tools?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We provide hands-on training on widely used project management tools including JIRA, Microsoft Project, and Azure DevOps, ensuring you gain practical experience with tools commonly used in real-world PM environments."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this online?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The entire program is delivered online through interactive Zoom sessions, allowing you to join from anywhere."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is placement support available?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We provide comprehensive placement assistance including resume building, LinkedIn optimization, interview prep, and sharing relevant opportunities."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes PMAISM different?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Unlike generic certification mills, we focus on real-world execution. You learn the actual workflows, AI tools, and stakeholder management skills required to survive and thrive on the job."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "_name": "4. WebSite Schema",
+      "_purpose": "Enables sitelinks searchbox in Google SERPs",
+      "_generator": "getWebSiteSchema()",
+      "data": {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "PMAISM",
+        "url": "https://pmaism.com",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://pmaism.com/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    },
+    {
+      "_name": "5. BreadcrumbList Schema",
+      "_purpose": "Navigation context for search engines and AI crawlers",
+      "_generator": "getBreadcrumbSchema()",
+      "data": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://pmaism.com"
+          }
+        ]
+      }
+    },
+    {
+      "_name": "6. Speakable Schema",
+      "_purpose": "Targets FAQ answers for voice assistants and AI Overviews",
+      "_generator": "getSpeakableSchema()",
+      "data": {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "PMAISM — Project Management Training, HITEC City, Hyderabad",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".faq-answer", "[data-testid='hero-cta-card']"]
+        }
+      }
+    }
+  ]
+}

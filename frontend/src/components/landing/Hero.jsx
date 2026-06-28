@@ -10,6 +10,7 @@ import {
   Calendar,
   Video,
   Zap,
+  MapPin,
 } from "lucide-react";
 import { TRUST_INDICATORS } from "@/data/content";
 import { useLead } from "@/context/LeadContext";
@@ -58,6 +59,18 @@ export default function Hero() {
               <Sparkles className="h-3.5 w-3.5" /> AI-Enhanced PM Career
               Accelerator
             </motion.span>
+
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.04 }}
+              className="mt-3"
+            >
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-muted-foreground">
+                <MapPin className="h-3 w-3 text-brand-light" />
+                HITEC City, Hyderabad
+              </span>
+            </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
